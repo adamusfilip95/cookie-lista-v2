@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <title>Cookie Consent – Mojra</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- 1) Preload: nastavíme defaultní deny ještě před načtením GA4 -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('consent','default',{
+      ad_storage:'denied',
+      analytics_storage:'denied',
+      ad_user_data:'denied',
+      ad_personalization:'denied',
+      functionality_storage:'granted',
+      security_storage:'granted'
+    });
+  </script>
+
+  <!-- 2) Tvůj GA4 měřicí kód -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BHQEJ5EC2D"></script>
+  <script>
+    gtag('js', new Date());
+    gtag('config', 'G-BHQEJ5EC2D', { 'wait_for_update': 500 });
+  </script>
+</head>
+<body>
+
+  <!-- 3) Cookie lišta -->
+  <style>
+    :root { --ccy-primary: #49A4EE; --ccy-dark: #222; --ccy-light: #fff; --ccy-border: #e5e5e5; }
+    .ccy-hidden { display:none !important; }
+    .ccy-banner, .ccy-modal-backdrop { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; box-sizing: border-box; }
+    .ccy-banner { position: fixed; inset: auto 0 0 0; z-index: 9999; background: var(--ccy-light); color: var(--ccy-dark); border-top: 1px solid var(--ccy-border); padding: 16px; box-shadow: 0 -6px 24px rgba(0,0,0,.08); }
+    .ccy-banner__wrap { max-width: 1200px; margin: 0 auto; display:flex; gap:16px; align-items: center; }
+    .ccy-banner__text { flex:1 1 auto; min-width:0; font-size:14px; line-height:1.5; }
+    .ccy-banner__title { font-weight:700; margin-bottom:6px; }
+    .ccy-banner__actions { display:flex; gap:8px; align-items:center; flex-wrap: nowrap; flex-shrink:0; }
+    .ccy-btn { appearance:none; border:1px solid var(--ccy-border); background:#f9f9f9; color:var(--ccy-dark); padding:10px 14px; border-radius:8px; font-size:14px; line-height:1; min-height:40px; cursor:pointer; transition: transform .12s ease, filter .12s ease; display:inline-flex; align-items:center; justify-content:center; gap:8px; white-space:nowrap; }
+    .ccy-btn--primary { background: var(--ccy-primary); color:var(--ccy-light); border-color: var(--ccy-primary); }
+    .ccy-btn--primary:hover { filter:brightness(.95); transform: translateY(-1px); }
+    .ccy-btn--ghost { background: var(--ccy-light); }
+    .ccy-btn:focus { outline: 3px solid rgba(73,164,238,.18); outline-offset:3px; }
+    .ccy-modal-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,.42); z-index: 10000; display:flex; align-items:center; justify-content:center; padding:16px; }
+    .ccy-modal { background:#fff; border-radius:12px; width:100%; max-width:720px; box-shadow: 0 12px 40px rgba(0,0,0,.20); overflow:hidden; }
+    .ccy-modal__header { padding:18px 22px; border-bottom:1px solid #f1f1f1; }
+    .ccy-modal__title { margin:0; font-size:18px; font-weight:700; color:var(--ccy-dark); }
+    .ccy-modal__body { padding: 14px 22px 8px 22px; max-height: 68vh; overflow:auto; }
+    .ccy-group { border:1px solid #f1f1f1; border-radius:10px; padding:12px; margin: 10px 0; background:#fff; }
+    .ccy-group h4 { margin:0 0 6px 0; font-size:15px; color:var(--ccy-dark); }
+    .ccy-group p { margin:0; font-size:13px; color:#555; }
+    .ccy-switch { display:flex; align-items:center; gap:12px; margin-top:10px; }
+    .ccy-switch input[type=checkbox] { accent-color: var(--ccy-primary); width:18px; height:18px; cursor:pointer; }
+    .ccy-modal__footer { padding:14px 22px; border-top:1px solid #f1f1f1; display:flex; gap:8px; justify-content:flex-end; }
+    .ccy-inline-note { font-size:12px; color:#666; margin:8px 0 0 0; }
+    .ccy-required { font-size:12px; color:#666; }
+    .ccy-manage-trigger { position: fixed; left: 16px; bottom: 16px; z-index: 9998; background: var(--ccy-primary); border:1px solid var(--ccy-primary); border-radius:50%; width:50px; height:50px; display:flex; align-items:center; justify-content:center; box-shadow: 0 4px 12px rgba(0,0,0,.15); cursor:pointer; }
+    .ccy-manage-trigger svg { width:26px; height:26px; fill:#fff; }
+    .ccy-manage-trigger:hover { filter:brightness(.9); transform: translateY(-2px); }
+    @media (max-width: 640px) { .ccy-banner__wrap { flex-direction: column; align-items: stretch; gap:12px; } .ccy-banner__actions { width:100%; flex-wrap:wrap; gap:10px; } .ccy-btn { flex:1 1 100%; width:100%; } }
+  </style>
+
+  <div id="ccy-banner" class="ccy-banner ccy-hidden">
+    <div class="ccy-banner__wrap">
+      <div class="ccy-banner__text">
+        <div class="ccy-banner__title">Používáme cookies</div>
+        Pro lepší fungování webu, měření návštěvnosti a personalizaci reklam. „Nutné“ cookies používáme vždy.
+        <a href="https://mojra.cz/page/cookies" target="_blank" rel="noopener noreferrer">Více informací</a>
+      </div>
+      <div class="ccy-banner__actions">
+        <button class="ccy-btn" id="ccy-reject">Odmítnout</button>
+        <button class="ccy-btn ccy-btn--ghost" id="ccy-settings">Nastavení</button>
+        <button class="ccy-btn ccy-btn--primary" id="ccy-accept">Přijmout vše</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tlačítko vlevo dole -->
+  <button id="ccy-manage" class="ccy-manage-trigger ccy-hidden" aria-label="Spravovat cookies">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10 6 6 0 0 1-6-6 6 6 0 0 1-4-4zm-3 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm8 3a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-4 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-5-2a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/></svg>
+  </button>
+
+  <div id="ccy-modal-wrap" class="ccy-modal-backdrop ccy-hidden">
+    <div class="ccy-modal">
+      <div class="ccy-modal__header"><h3 class="ccy-modal__title">Nastavení souhlasu</h3></div>
+      <div class="ccy-modal__body">
+        <div class="ccy-group"><h4>Nutné</h4><p>Zajišťují bezpečnost a základní funkce webu.</p><div class="ccy-required">Vždy povoleno</div></div>
+        <div class="ccy-group"><h4>Analytické</h4><label class="ccy-switch"><input type="checkbox" id="ccy-analytics"> Povolit</label></div>
+        <div class="ccy-group"><h4>Reklamní úložiště</h4><label class="ccy-switch"><input type="checkbox" id="ccy-adstorage"> Povolit</label></div>
+        <div class="ccy-group"><h4>Reklamní uživatelská data</h4><label class="ccy-switch"><input type="checkbox" id="ccy-aduserdata"> Povolit</label></div>
+        <div class="ccy-group"><h4>Personalizace reklam</h4><label class="ccy-switch"><input type="checkbox" id="ccy-adpersonalization"> Povolit</label></div>
+      </div>
+      <div class="ccy-modal__footer">
+        <button class="ccy-btn" id="ccy-cancel">Zavřít</button>
+        <button class="ccy-btn ccy-btn--ghost" id="ccy-deny-all">Odmítnout vše</button>
+        <button class="ccy-btn ccy-btn--primary" id="ccy-save">Uložit nastavení</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const KEY='mojra_consent_v2';const DAYS=180;const now=()=>Math.floor(Date.now()/1000);const toSec=d=>d*24*60*60;
+    function saveConsent(c){localStorage.setItem(KEY,JSON.stringify({...c,ts:now()}));}
+    function loadConsent(){try{const raw=localStorage.getItem(KEY);if(!raw)return null;const p=JSON.parse(raw);if(!p.ts||now()-p.ts>toSec(DAYS))return null;return{analytics:!!p.analytics,adstorage:!!p.adstorage,aduserdata:!!p.aduserdata,adpersonalization:!!p.adpersonalization};}catch(e){return null;}}
+    function applyConsent(c){gtag('consent','update',{analytics_storage:c.analytics?'granted':'denied',ad_storage:c.adstorage?'granted':'denied',ad_user_data:c.aduserdata?'granted':'denied',ad_personalization:c.adpersonalization?'granted':'denied',functionality_storage:'granted',security_storage:'granted'});}
+    const $b=document.getElementById('ccy-banner'),$m=document.getElementById('ccy-modal-wrap'),$mb=document.getElementById('ccy-manage');
+    const $a=document.getElementById('ccy-accept'),$r=document.getElementById('ccy-reject'),$s=document.getElementById('ccy-settings'),$sa=document.getElementById('ccy-save'),$d=document.getElementById('ccy-deny-all'),$c=document.getElementById('ccy-cancel');
+    const $cbA=document.getElementById('ccy-analytics'),$cbAS=document.getElementById('ccy-adstorage'),$cbAU=document.getElementById('ccy-aduserdata'),$cbAP=document.getElementById('ccy-adpersonalization');
+    function showBanner(){ $b.classList.remove('ccy-hidden'); } function hideBanner(){ $b.classList.add('ccy-hidden'); }
+    function openModal(){ $m.classList.remove('ccy-hidden'); } function closeModal(){ $m.classList.add('ccy-hidden'); }
+    function showManage(){ $mb.classList.remove('ccy-hidden'); } function hideManage(){ $mb.classList.add('ccy-hidden'); }
+    function readForm(){return{analytics:$cbA.checked,adstorage:$cbAS.checked,aduserdata:$cbAU.checked,adpersonalization:$cbAP.checked};}
+    function setForm(c){$cbA.checked=!!c.analytics;$cbAS.checked=!!c.adstorage;$cbAU.checked=!!c.aduserdata;$cbAP.checked=!!c.adpersonalization;}
+    function handle(consent){applyConsent(consent);saveConsent(consent);hideBanner();showManage();}
+    $a.onclick=()=>handle({analytics:true,adstorage:true,aduserdata:true,adpersonalization:true});
+    $r.onclick=()=>handle({analytics:false,adstorage:false,aduserdata:false,adpersonalization:false});
+    $s.onclick=()=>{setForm(loadConsent()||{analytics:false,adstorage:false,aduserdata:false,adpersonalization:false});openModal();};
+    $sa.onclick=()=>{handle(readForm());closeModal();};
+    $d.onclick=()=>{handle({analytics:false,adstorage:false,aduserdata:false,adpersonalization:false});closeModal();};
+    $c.onclick=()=>closeModal();
+    $mb.onclick=()=>{$s.onclick();};
+    (function init(){const saved=loadConsent();if(saved){applyConsent(saved);hideBanner();showManage();}else{showBanner();hideManage();}})();
+  </script>
+
+</body>
+</html>
